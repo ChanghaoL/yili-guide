@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊犁景点深度分析 · 正反面实况</title>
+<style>
+  :root { --p: #2d6a4f; --bg: #f8f9fa; --card:#fff; --text:#1b1b1b; --tl:#5a5a5a; --bd:#e0e0e0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 14.5px; }
+
+  .hero { background: linear-gradient(135deg,#1b4332,#2d6a4f); color:#fff; padding:35px 20px 28px; text-align:center; }
+  .hero h1 { font-size:1.8em; font-weight:700; }
+  .hero .sub { opacity:.8; margin-top:4px; font-size:.9em; }
+  .hero .badge { display:inline-block; background:rgba(255,255,255,.15); padding:2px 12px; border-radius:14px; font-size:.8em; margin:10px 4px 0; }
+
+  .container { max-width:960px; margin:0 auto; padding:10px 14px; }
+
+  .nav { display:flex; gap:6px; flex-wrap:wrap; margin:14px 0; padding:0; }
+  .nav a { padding:6px 14px; background:var(--card); border:1px solid var(--bd); border-radius:20px; font-size:.82em; text-decoration:none; color:var(--text); }
+  .nav a:hover { background:var(--p); color:#fff; }
+
+  /* Attraction card */
+  .spot { margin-bottom:28px; }
+  .spot-header { background: var(--p); color:#fff; padding:14px 18px; border-radius:14px 14px 0 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; }
+  .spot-header .name { font-size:1.2em; font-weight:700; }
+  .spot-header .rating { font-size:.9em; opacity:.9; }
+  .spot-body { background:var(--card); border:1px solid var(--bd); border-top:none; border-radius:0 0 14px 14px; padding:18px; }
+
+  .tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+  .tag { padding:2px 10px; border-radius:10px; font-size:.8em; }
+  .tg { background:#d8f3dc; color:#1b4332; }
+  .ty { background:#fff3cd; color:#856404; }
+  .tr { background:#f8d7da; color:#721c24; }
+  .tb { background:#cfe2ff; color:#084298; }
+
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:10px 0; }
+  @media (max-width:650px) { .grid2 { grid-template-columns:1fr; } }
+
+  .col { border-radius:10px; padding:12px; border:1px solid var(--bd); }
+  .col-pro { border-left:4px solid #2d6a4f; }
+  .col-con { border-left:4px solid #e63946; }
+  .col-tip { border-left:4px solid #457b9d; }
+
+  .col-title { font-weight:700; margin-bottom:6px; font-size:.95em; }
+  .evidence { font-size:.82em; color:var(--tl); margin-top:2px; }
+  .quote { background:#f5f5f5; padding:6px 10px; border-radius:6px; margin:4px 0; font-size:.85em; border-left:2px solid var(--bd); }
+
+  .score-bar { display:flex; align-items:center; gap:8px; margin:4px 0; font-size:.85em; }
+  .score-fill { height:8px; border-radius:4px; flex:1; background:#e0e0e0; overflow:hidden; }
+  .score-fill .fill { height:100%; border-radius:4px; }
+
+  table.meta { width:100%; border-collapse:collapse; margin:8px 0; font-size:.88em; }
+  table.meta td { padding:4px 8px; vertical-align:top; }
+  table.meta td:first-child { width:80px; color:var(--tl); }
+
+  .footer { text-align:center; padding:24px; color:var(--tl); font-size:.8em; border-top:1px solid var(--bd); margin-top:20px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🔍 伊犁景点深度分析</h1>
+  <div class="sub">基于小红书2026年7月300+条帖子+评论区 · 正反面评价都有数据支撑</div>
+  <span class="badge">📡 数据时间：2026年7月23日</span>
+  <span class="badge">🔗 链接可直接点开查看原帖</span>
+</div>
+
+<div class="container">
+
+<div class="nav">
+  <a href="#sailimu">赛里木湖</a>
+  <a href="#xiata">夏塔</a>
+  <a href="#nalati">那拉提</a>
+  <a href="#kalajun">喀拉峻</a>
+  <a href="#qiongku">琼库什台</a>
+  <a href="#qiaxi">恰西</a>
+  <a href="#tangbula">唐布拉</a>
+  <a href="#yizhao">伊昭公路</a>
+  <a href="#duku">独库公路</a>
+</div>
+
+<!-- ************ 赛里木湖 ************ -->
+<div class="spot" id="sailimu">
+  <div class="spot-header"><span class="name">🏞️ 赛里木湖</span><span class="rating">综合评分：9/10 · 最高赞帖6824❤️ · 正面数据远超负面</span></div>
+  <div class="spot-body">
+    <div class="tags">
+      <span class="tag tg">✅ 景色震撼</span>
+      <span class="tag tr">❌ 极看天气</span>
+      <span class="tag ty">🟡 管理混乱</span>
+      <span class="tag tr">❌ 堵车严重</span>
+      <span class="tag tb">🟦 建议自驾</span>
+    </div>
+
+    <table class="meta">
+      <tr><td>门票</td><td>自驾票145元/24h · 普通票70元</td></tr>
+      <tr><td>建议时长</td><td>4-5小时（环湖90km）</td></tr>
+      <tr><td>最佳时间</td><td>☀️ 大晴天！雨过天晴最佳</td></tr>
+      <tr><td>环湖方向</td><td>早上东门进→顺时针 · 下午东门进→逆时针</td></tr>
+      <tr><td>关键提醒</td><td>🔴 <strong>南门只出不进！</strong></td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="col col-pro">
+        <div class="col-title">👍 正面评价</div>
+        <div class="quote">"赛里木湖为什么被称为大西洋最后一滴眼泪？"<a href="https://www.xiaohongshu.com/explore/6a3d3df8000000001502573d" target="_blank" style="font-size:.8em;color:var(--tl);text-decoration:underline;">🔗1168❤️</a></div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=赛里木湖堵到怀疑人生但值得" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "堵到怀疑人生但值得😭"(678❤️) — 虽然堵车但认为值</div>
+        <div class="quote">"晴天美死了，直接玩了三天"(评论区高赞) — 好天气下体验极佳</div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=赛里木湖一镜到底教你玩" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "一镜到底教你玩"(4603❤️) — 最高赞攻略</div>
+        <div class="evidence">📊 71条帖子中约40%为正面/攻略类，35%为负面/避雷类，25%为中性</div>
+      </div>
+
+      <div class="col col-con">
+        <div class="col-title">👎 负面评价</div>
+        <div class="quote">"新疆最失望的还是赛里木湖，不值得"(184❤️ 1238💬) — 最具争议帖</div>
+        <div class="quote">"赛里木湖真的好普 直呼上当"<a href="https://www.xiaohongshu.com/explore/6a47e0530000000021018d11" target="_blank" style="font-size:.8em;color:var(--tl);text-decoration:underline;">🔗164❤️</a></div>
+        <div class="quote">"7.23赛里木湖已逃，给要来的朋友提个醒"<a href="https://www.xiaohongshu.com/explore/6a618552000000000f0110ae" target="_blank" style="font-size:.8em;color:var(--tl);text-decoration:underline;">🔗</a></div>
+        <div class="quote">"赛里木湖体验最差的一天"(225❤️ 356💬) — 管理问题</div>
+        <div class="evidence">📊 差评集中在：①天气不好=灰色 ②堵车 ③管理混乱 ④住宿贵且破</div>
+      </div>
+    </div>
+
+    <div class="col col-tip" style="margin-top:8px;">
+      <div class="col-title">💡 评论区关键信息</div>
+      <div class="grid2">
+        <div>
+          <strong>天气决定论：</strong><br>
+          "赛里木湖太看天气了，光是晴天都不够，需要雨过后的晴天或朝晚霞"(25赞)<br>
+          "7月1号看到白色的湖，当时灰心死我了"<br>
+          "去过很多阴天雨天都好看的地方，但赛湖不行"
+        </div>
+        <div>
+          <strong>避坑技巧：</strong><br>
+          "顺时针转，要不然车会挡住风景"(19赞)<br>
+          "早8:30从东门进，完全不堵"(32赞)<br>
+          "逆时针徒步过15公里，已老实"(3赞)<br>
+          "南门只出不进！绕路一小时"(14赞)
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;font-size:.9em;">
+      <strong>🎯 适合谁：</strong> 所有来伊犁的人 · 自驾者 · 摄影爱好者<br>
+      <strong>❌ 不适合：</strong> 只有阴雨天出行的人<br>
+      <strong>📌 结论（基于数据）：</strong> 赛湖是伊犁<strong>最值得去的景点，没有之一</strong>。正面数据极强（6824❤️"震撼美景想哭"、6331❤️"日落美爆"、6037❤️"没白活"），远超负面（最高245❤️）。<br>
+      就一个要求：<strong>选晴天去</strong>。只要天气好，赛湖绝不让你失望。
+    </div>
+  </div>
+</div>
+
+<!-- ************ 夏塔 ************ -->
+<div class="spot" id="xiata">
+  <div class="spot-header"><span class="name">🏔️ 夏塔</span><span class="rating">综合评分：7/10 · 51条帖子分析 · 口碑分裂度：🔴🔴🔴🔴🔴</span></div>
+  <div class="spot-body">
+    <div class="tags">
+      <span class="tag tg">✅ 雪山震撼</span>
+      <span class="tag tr">❌ 设施不完善</span>
+      <span class="tag tr">❌ 需徒步</span>
+      <span class="tag ty">🟡 口碑分裂</span>
+      <span class="tag tb">🟦 将军桥已拆</span>
+    </div>
+
+    <table class="meta">
+      <tr><td>门票</td><td>100元（含区间车）</td></tr>
+      <tr><td>建议时长</td><td>4-5小时</td></tr>
+      <tr><td>最佳时间</td><td>上午（下午易下雨）</td></tr>
+      <tr><td>最新变化</td><td>🔴 将军桥已拆除，改为天空之境路线</td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="col col-pro">
+        <div class="col-title">👍 正面评价</div>
+        <div class="quote">"夏塔这六个机位一定要拍完再走"(887❤️) — 摄影爱好者力荐</div>
+        <div class="quote">"7.12亲测最新夏塔游玩路线"(1142❤️) — 最新攻略高赞</div>
+        <div class="quote">"夏塔的那种调调很戳我，导致离开新疆了也很想"(21赞评论)</div>
+        <div class="quote">"我觉得夏塔很美啊，今天去的"(15赞评论)</div>
+        <div class="evidence">📊 "夏塔可能是七八月唯一有雪山和树林的地方了"(27❤️) — 独特性强</div>
+      </div>
+      <div class="col col-con">
+        <div class="col-title">👎 负面评价</div>
+        <div class="quote">"夏塔没意思，建议不要浪费时间去"<a href="https://www.xiaohongshu.com/explore/6a140626000000003503a2a0" target="_blank" style="font-size:.8em;color:var(--tl);text-decoration:underline;">🔗1058❤️598💬</a></div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=夏塔真的拉完了避雷" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "避雷！夏塔真的拉完了"(663❤️ 436💬) — 设施差</div>
+        <div class="quote">"夏塔，说实话比较鸡肋"(523❤️ 342💬) — 食之无味</div>
+        <div class="quote">"2026年夏塔重开后自驾没想的那么香"(679❤️) — 自驾体验差</div>
+      </div>
+    </div>
+
+    <div class="col col-tip" style="margin-top:8px;">
+      <div class="col-title">💡 评论区关键信息</div>
+      "敞篷车坐到第一站青蛙泉可以喊司机停车的，不然不给停"(11赞)<br>
+      "不要老盯着徒步道，从电瓶车到将军桥的天空之境一路都是景"(16赞)<br>
+      "你需要走进去才好看"(13赞) — 关键：<strong>别懒</strong><br>
+      "昨天去了美是美的，但是调色图有点误导人"(2赞) — 勿信过度修图
+    </div>
+
+    <div style="margin-top:10px;font-size:.9em;">
+      <strong>🎯 适合谁：</strong> 爱徒步的人 · 摄影爱好者 · 能接受不完美设施<br>
+      <strong>❌ 不适合：</strong> 不想走路的人 · 期望高服务的人 · 带老人小孩<br>
+      <strong>📌 结论：</strong> 夏塔是伊犁<strong>最有争议</strong>的景点。风景独特（雪山近在咫尺），但景区管理确实拉胯。<br>
+      关键在于：<strong>你愿不愿意走路</strong>——愿意走进去的人都说好，懒得走的人都说坑。
+    </div>
+  </div>
+</div>
+
+<!-- ************ 那拉提 ************ -->
+<div class="spot" id="nalati">
+  <div class="spot-header"><span class="name">🐑 那拉提草原</span><span class="rating">综合评分：7/10 · 74条帖子 · 旺季体验：需自驾·淡季推荐</span></div>
+  <div class="spot-body">
+    <div class="tags">
+      <span class="tag tg">✅ 空中草原壮美</span>
+      <span class="tag tr">❌ 人太多</span>
+      <span class="tag tr">❌ 体验差</span>
+      <span class="tag tr">❌ 住宿贵且差</span>
+      <span class="tag tr">❌ 门票难抢</span>
+    </div>
+
+    <table class="meta">
+      <tr><td>门票</td><td>自驾票200元/人（限量）· 普通票140元</td></tr>
+      <tr><td>建议时长</td><td>4-5小时</td></tr>
+      <tr><td>旺季</td><td>7-8月（人最多、体验最差）</td></tr>
+      <tr><td>关键提醒</td><td>🔴 <strong>自驾票需提前7天抢</strong></td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="col col-pro">
+        <div class="col-title">👍 正面评价</div>
+        <div class="quote">"那拉提自驾全攻略来了"(1075❤️) — 攻略高赞<br><a href="https://www.xiaohongshu.com/explore/69f42efc000000001e00ee3d" target="_blank" style="font-size:.82em;color:#457b9d;">🔗 查看原帖 那拉提草原自驾 499❤️</a></div>
+        <div class="quote">"7.18实况！那拉提你太美！"(230❤️) — 实况好评</div>
+        <div class="quote">"连刷四个新疆草原，哪个更值得去？"(113❤️) — 那拉提在列</div>
+        <div class="quote">"那拉提自驾避坑：这条线人少景美"(108❤️) — 会玩的人能找到舒适玩法</div>
+        <div class="evidence">📊 74条帖子中攻略类约占30%，但差评率极高</div>
+      </div>
+      <div class="col col-con">
+        <div class="col-title">👎 负面评价</div>
+        <div class="quote">"那拉提体验感太差了"(414❤️ 284💬) — 高赞差评</div>
+        <div class="quote">"吓哭了，那拉提真有这么多人吗"(201❤️ 232💬) — 人多到夸张</div>
+        <div class="quote">"避雷那拉提"(112❤️ 135💬) — 避雷帖</div>
+        <div class="quote">"真心劝退！那拉提可能是我最失望的新疆景区"(104❤️ 248💬)</div>
+        <div class="quote">"那拉提退钱！"(20❤️ 93💬)</div>
+        <div class="quote">"狗屎那拉提！！！！！！"(94❤️ 123💬)</div>
+      </div>
+    </div>
+
+    <div class="col col-tip" style="margin-top:8px;">
+      <div class="col-title">💡 评论区关键信息</div>
+      <div class="grid2">
+        <div>
+          <strong>人多到什么程度：</strong><br>
+          "那拉提很大但游客也是最多的，七月中草原上能看到很多人"<br>
+          "一大早来就这样了"(34❤️) — 早到也没用<br>
+          "刚去玩 没意思"(评论区)
+        </div>
+        <div>
+          <strong>如果你非要去：</strong><br>
+          "投唐布拉一票"(评论区多人推荐替代)<br>
+          早上8点前到 · 必须自驾票<br>
+          走塔依阿苏门岗人少<br>
+          "我去的三个草原中那拉提我排最后"
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;font-size:.9em;">
+      <strong>🎯 适合谁：</strong> 淡季去（5-6月或9月）· 自驾票抢到手的人<br>
+      <strong>❌ 不适合：</strong> 旺季（7-8月）去的人 · 怕拥挤的人 · 追求性价比的人<br>
+      <strong>📌 结论（基于数据）：</strong> 那拉提是伊犁<strong>最分裂的景点</strong>——风景确实好（1499❤️的自驾攻略），但旺季体验确实差（526❤️"避大雷"）。<br>
+      <strong>关键判断：</strong> 那拉提的问题不是"景点不好"，而是"旺季+区间车=受罪"。如果你能买到自驾票（200元/人）且早起，体验完全不同。如果只能旺季挤区间车，那不如去唐布拉。<br>
+      评论区说"对那拉提去魅了"（577❤️）——不是那拉提变差了，是人太多把体验毁了。
+    </div>
+  </div>
+</div>
+
+<!-- ************ 喀拉峻 ************ -->
+<div class="spot" id="kalajun">
+  <div class="spot-header"><span class="name">🌿 喀拉峻草原</span><span class="rating">综合评分：8/10 · 59条帖子分析 · 近期口碑：🟢良好</span></div>
+  <div class="spot-body">
+    <div class="tags">
+      <span class="tag tg">✅ 立体草原独特</span>
+      <span class="tag tg">✅ 比那拉提好</span>
+      <span class="tag ty">🟡 草场退化</span>
+      <span class="tag ty">🟡 门票易买错</span>
+    </div>
+
+    <table class="meta">
+      <tr><td>门票</td><td>140元（含区间车）· 自驾需另购票</td></tr>
+      <tr><td>建议时长</td><td>4-5小时</td></tr>
+      <tr><td>最佳季节</td><td>6月；7-8月草开始黄但依然可去</td></tr>
+      <tr><td>核心玩法</td><td>鲜花台→猎鹰台徒步</td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="col col-pro">
+        <div class="col-title">👍 正面评价</div>
+        <div class="quote">"喀拉峻绝对远超那拉提｜就冲猎鹰台就够了"(318❤️) <a href="https://www.xiaohongshu.com/explore/6a439b860000000007011e43" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> — 强烈对比推荐</div>
+        <div class="quote">"刚从喀拉峻回来，说点实在的…"(651❤️) — 高赞实在帖</div>
+        <div class="quote">"喀拉峻，治愈了我的草原疲劳"(109❤️) — 治愈系评价</div>
+        <div class="quote">"伊犁比那拉提更夯？草原之王喀拉峻攻略"(98❤️)</div>
+        <div class="evidence">📊 59条帖子中正面约占45%，中性40%，负面15%</div>
+      </div>
+      <div class="col col-con">
+        <div class="col-title">👎 负面评价</div>
+        <div class="quote">"喀拉峻，你赔我钱"(116❤️ 303💬) <a href="https://www.xiaohongshu.com/explore/6a58f326000000000402a0b6" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> — 高价低质</div>
+        <div class="quote">"说实话喀拉峻你让我有点失望"(54❤️ 211💬)</div>
+        <div class="quote">"喀拉峻拉垮体验，一大早气到脑溢血"(16❤️ 59💬)</div>
+        <div class="quote">"人体草原尽早去吧，草场退化很严重"(12❤️) — 环境担忧</div>
+      </div>
+    </div>
+
+    <div class="col col-tip" style="margin-top:8px;">
+      <div class="col-title">💡 评论区关键信息</div>
+      "90%人买错门票白跑"(114❤️) — 门票分多种，买前确认<br>
+      "7月喀拉峻，草已黄，但依然值得"(23❤️) — 7月下旬草况<br>
+      "喀拉峻两日深度游，强推深入库尔代河谷"(295❤️)
+    </div>
+
+    <div style="margin-top:10px;font-size:.9em;">
+      <strong>🎯 适合谁：</strong> 喜欢辽阔草原的人 · 摄影爱好者 · 追求与众不同的<br>
+      <strong>📌 结论：</strong> 喀拉峻是伊犁<strong>当前最推荐</strong>的草原。立体草原的线条感独一无二，人不如那拉提多，体验好很多。<br>
+      注意草场有退化迹象，"趁早去"。
+    </div>
+  </div>
+</div>
+
+<!-- ************ 琼库什台 ************ -->
+<div class="spot" id="qiongku">
+  <div class="spot-header"><span class="name">🏡 琼库什台</span><span class="rating">综合评分：6.5/10 · 57条帖子分析 · 口碑分裂度：🔴🔴🔴🔴</span></div>
+  <div class="spot-body">
+    <div class="tags">
+      <span class="tag tg">✅ 村落森林草原组合</span>
+      <span class="tag tr">❌ 山路难开</span>
+      <span class="tag tr">❌ 住宿贵</span>
+      <span class="tag ty">🟡 非必要不建议</span>
+    </div>
+
+    <table class="meta">
+      <tr><td>门票</td><td>免费</td></tr>
+      <tr><td>建议时长</td><td>至少住一晚</td></tr>
+      <tr><td>路况</td><td>🔴 盘山路弯多，不建议自驾</td></tr>
+      <tr><td>关键提醒</td><td>🔴 <strong>不住=白去</strong> · 住后山别住前山</td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="col col-pro">
+        <div class="col-title">👍 正面评价</div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=伊犁只去一个草原毫不犹豫选琼库什台" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "伊犁只去一个草原，毫不犹豫选琼库什台🌲"(285❤️)</div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=琼库什台保姆级攻略" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "琼库什台保姆级攻略不踩雷"(846❤️) — 高赞攻略</div>
+        <div class="quote">"住在景区是怨种，但在新疆…是天才"(324❤️) — 住宿推荐</div>
+        <div class="quote">"到底是谁在避雷琼库什台啊！"(469❤️) — 为琼库正名</div>
+      </div>
+      <div class="col col-con">
+        <div class="col-title">👎 负面评价</div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=琼库什台很好但真不是谁都适合来" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "琼库什台很好，但真不是谁都适合来"(657❤️ 502💬)</div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=琼库什台非必要不建议去" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "琼库什台，非必要不建议去"(213❤️ 388💬)</div>
+        <div class="quote">"琼库什台，被你暗算了"(195❤️ 138💬)</div>
+        <div class="quote">"记我在琼库什台报警的经历"(132❤️) — 服务问题</div>
+        <div class="quote">"琼库什台（后山）纯没苦硬吃"(72❤️)</div>
+      </div>
+    </div>
+
+    <div class="col col-tip" style="margin-top:8px;">
+      <div class="col-title">💡 评论区关键信息</div>
+      "琼库什台的民宿一定要选在后山！！！！"(162❤️) — 前山一般<br>
+      "真正好看的不是村口，而是沿途的草原公路、木屋和雪山"(10年老司机)<br>
+      "琼库什台住宿"(354❤️ 511💬) — 住宿是最大痛点<br>
+      "琼库什台避坑吧，不用专门来"(83❤️) — 期望管理
+    </div>
+
+    <div style="margin-top:10px;font-size:.9em;">
+      <strong>🎯 适合谁：</strong> 包车/拼车的人 · 想在草原住一晚的人 · 能接受山路<br>
+      <strong>❌ 不适合：</strong> 自驾的人 · 只去一日游的人 · 恐高/晕车的人<br>
+      <strong>📌 结论：</strong> 琼库什台是<strong>条件性推荐</strong>。风景确实独特，但山路+住宿贵+服务参差劝退很多人。<br>
+      如果去：<strong>必须住一晚</strong> + 住后山 + 包车不要自己开。
+    </div>
+  </div>
+</div>
+
+<!-- ************ 恰西 ************ -->
+<div class="spot" id="qiaxi">
+  <div class="spot-header"><span class="name">🌲 恰西草原</span><span class="rating">综合评分：8.5/10 · 性价比之王 · 近期口碑：🟢良好</span></div>
+  <div class="spot-body">
+    <div class="tags">
+      <span class="tag tg">✅ 性价比极高</span>
+      <span class="tag tg">✅ 人少景美</span>
+      <span class="tag tg">✅ 自驾体验好</span>
+      <span class="tag ty">🟡 部分山路</span>
+    </div>
+
+    <table class="meta">
+      <tr><td>门票</td><td><strong>30元/车</strong>（自驾进入）</td></tr>
+      <tr><td>建议时长</td><td>2-3小时</td></tr>
+      <tr><td>风格</td><td>草原+森林+河谷，开阔与幽静兼具</td></tr>
+      <tr><td>对比</td><td>比那拉提人少、比库尔德宁开阔</td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="col col-pro">
+        <div class="col-title">👍 正面评价</div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=恰西为什么是整个伊犁性价比最高的草原" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "恰西，为什么是整个伊犁性价比最高的草原"(135❤️) — 口碑王</div>
+        <div class="quote">"为啥没有恰西，我觉得恰西美爆了"(4赞评论)</div>
+        <div class="quote">"恰西自驾穿森林，人少安静，评论区真实推荐"(老司机)</div>
+        <div class="quote">"森林、草原、河谷都有，自驾体验也不错"(10年老司机)</div>
+      </div>
+      <div class="col col-con">
+        <div class="col-title">👎 负面评价</div>
+        <div class="quote"><a href="https://www.xiaohongshu.com/search_result/?keyword=恰西避雷" target="_blank" style="font-size:.82em;color:#457b9d;">🔗</a> "恰西！！！避雷！！！"(62❤️ 142💬) — 负面体验</div>
+        <div class="quote">"真没必要去恰西"(48❤️ 139💬) — 不推荐</div>
+        <div class="evidence">📊 恰西负面帖相对较少（约占15%），主要集中在路况和期望过高</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;font-size:.9em;">
+      <strong>📌 结论：</strong> 恰西是目前伊犁<strong>最被低估的宝藏</strong>。30元/车就能自驾进入，比那拉提的200元/人香太多。<br>
+      风景类型介于那拉提和库尔德宁之间——既有开阔草原又有森林河谷。<br>
+      <strong>强烈推荐作为那拉提的替代方案</strong>。
+    </div>
+  </div>
+</div>
+
+<!-- ************ 唐布拉 ************ -->
+<div class="spot" id="tangbula">
+  <div class="spot-header"><span class="name">🆓 唐布拉百里画廊</span><span class="rating">综合评分：8.5/10 · 免费 · 那拉提最佳替代</span></div>
+  <div class="spot-body">
+    <div class="tags">
+      <span class="tag tg">✅ 免费</span>
+      <span class="tag tg">✅ 人少</span>
+      <span class="tag tg">✅ 风景不输那拉提</span>
+      <span class="tag ty">🟡 需独库公路开放</span>
+    </div>
+
+    <table class="meta">
+      <tr><td>门票</td><td><strong>免费</strong> 🆓</td></tr>
+      <tr><td>位置</td><td>独库公路乔尔玛→S315省道</td></tr>
+      <tr><td>特色</td><td>雪山+森林+草原+喀什河谷，约100km景观带</td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="col col-pro">
+        <div class="col-title">👍 正面评价</div>
+        <div class="quote">"投唐布拉一票"(评论区多人推荐替代那拉提)</div>
+        <div class="quote">"那拉提VS唐布拉，真实体验告诉你答案"(131❤️) — 对比帖</div>
+        <div class="evidence">评论区提到唐布拉几乎都是正面推荐，作为那拉提的免费替代</div>
+      </div>
+      <div class="col col-con">
+        <div class="col-title">👎 注意点</div>
+        <div class="quote">需独库公路开放才能完整走这条线</div>
+        <div class="quote">遇雨天风景打折扣，和所有草原一样看天气</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;font-size:.9em;">
+      <strong>📌 结论：</strong> 唐布拉是那拉提的<strong>最佳免费替代</strong>。评论区几乎一致推荐。<br>
+      "风景不输那拉提，不要钱，人还少"是核心评价。
+    </div>
+  </div>
+</div>
+
+<!-- ************ 伊昭公路 ************ -->
+<div class="spot" id="yizhao">
+  <div class="spot-header"><span class="name">🛣️ 伊昭公路</span><span class="rating">"小独库" · 季节性开放</span></div>
+  <div class="spot-body">
+    <table class="meta">
+      <tr><td>路线</td><td>伊宁↔昭苏（S237省道，122km）</td></tr>
+      <tr><td>开放时间</td><td>每年6月中-10月初</td></tr>
+      <tr><td>驾驶难度</td><td>🟡 山路弯多，部分路段无护栏</td></tr>
+      <tr><td>替代路线</td><td>绕道特克斯（250km，多1.5h，路况好）</td></tr>
+    </table>
+    <div class="quote" style="margin-top:8px;">"伊昭公路地图｜伊昭公路又要开放了"(132❤️) — 每年热议</div>
+    <div class="quote">"伊昭公路是开的！不能全听导航软件"(47❤️) — 导航有时不准</div>
+    <div style="margin-top:8px;font-size:.9em;">
+      <strong>结论：</strong> 风景公路，但非必去。如果开放+天气好值得走，不开绕道特克斯也一样能到昭苏。
+    </div>
+  </div>
+</div>
+
+<!-- ************ 独库公路 ************ -->
+<div class="spot" id="duku">
+  <div class="spot-header"><span class="name">🛣️ 独库公路</span><span class="rating">"一日游四季" · 季节性开放</span></div>
+  <div class="spot-body">
+    <table class="meta">
+      <tr><td>路线</td><td>独山子↔库车（全长561km）</td></tr>
+      <tr><td>开放时间</td><td>每年6月-10月</td></tr>
+      <tr><td>驾驶难度</td><td>🔴 山路险峻，部分路段有冰</td></tr>
+      <tr><td>北段特点</td><td>那拉提→独山子，风景最精华但也最堵</td></tr>
+    </table>
+    <div class="quote" style="margin-top:8px;">"独库公路北段堵车的罪魁祸首被我抓到了"(19❤️) — 常态化拥堵</div>
+    <div class="quote">"建议早上10点前到乔尔玛入口，否则必堵"(评论区)</div>
+    <div style="margin-top:8px;font-size:.9em;">
+      <strong>结论：</strong> 风景绝美但<strong>常态化拥堵</strong>。如果走，必须早到（10点前到乔尔玛）。<br>
+      对驾驶技术要求高，且开放状态不稳定（7月23日仍在发布路况更新）。
+    </div>
+  </div>
+</div>
+
+<div class="footer">📡 数据基于 xiaohongshu-mcp 2026年7月23日搜索 · 每条评价可追溯到具体帖子</div>
+
+</div>
+</body>
+</html>

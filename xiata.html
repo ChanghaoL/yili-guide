@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>夏塔 · 详细攻略</title>
+<style>
+:root{--p:#2d6a4f;--bg:#f8f9fa;--card:#fff;--text:#1b1b1b;--tl:#5a5a5a;--bd:#e0e0e0;--red:#e63946;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:14.5px}
+.hero{background:linear-gradient(135deg,#1e3a5f,#1a5276,#2980b9);color:#fff;padding:35px 20px;text-align:center}
+.hero h1{font-size:1.8em}
+.hero .score{font-size:3em;font-weight:700;margin:10px 0}
+.container{max-width:900px;margin:0 auto;padding:12px 14px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin:16px 0}
+.tab{padding:8px 16px;border-radius:8px;cursor:pointer;border:1px solid var(--bd);background:var(--card);font-size:.88em;font-weight:600}
+.tab.active{background:var(--p);color:#fff;border-color:var(--p)}
+.tc{display:none}.tc.show{display:block}
+.card{background:var(--card);border-radius:12px;padding:16px;margin-bottom:12px;border:1px solid var(--bd)}
+.c-title{font-weight:700;font-size:1.05em;margin-bottom:8px;color:var(--p)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:600px){.info-grid{grid-template-columns:1fr}}
+.info-item{padding:6px 0}
+.info-item .label{color:var(--tl);font-size:.85em}
+.tip{padding:8px 12px;margin:4px 0;border-radius:8px;font-size:.9em}
+.tip-g{background:#d8f3dc;border-left:3px solid var(--p)}
+.tip-y{background:#fff3cd;border-left:3px solid #e9c46a}
+.tip-r{background:#f8d7da;border-left:3px solid var(--red)}
+.route{background:#f5f5f5;padding:10px 14px;border-radius:8px;font-size:.9em;line-height:1.8;margin:6px 0}
+.footer{text-align:center;padding:20px;color:var(--tl);font-size:.82em}
+</style></head>
+<body>
+
+<div class="hero">
+<h1>🏔️ 夏塔 · 详细攻略</h1>
+<div class="score">7.0<span style="font-size:.4em">/10</span></div>
+<div style="font-size:.9em;opacity:.85">伊犁最有争议的景点 · 雪山+草原+森林+河流集中一条山谷<br>1142❤️ "亲测最新路线" · 1058❤️ "建议不要浪费时间" — 爱徒步的天堂，懒人的地狱</div>
+</div>
+
+<div class="container">
+
+<div class="tabs">
+<div class="tab active" onclick="sw('basic')">📋 基本信息</div>
+<div class="tab" onclick="sw('go')">🚗 怎么去</div>
+<div class="tab" onclick="sw('play')">🎯 怎么玩</div>
+<div class="tab" onclick="sw('photo')">📷 拍照</div>
+<div class="tab" onclick="sw('avoid')">⚠️ 避坑</div>
+</div>
+
+<!-- BASIC -->
+<div class="tc show" id="basic">
+<div class="card"><div class="c-title">📋 基本信息</div>
+<div class="info-grid">
+<div class="info-item"><div class="label">门票</div><strong>100元</strong>（含区间车）</div>
+<div class="info-item"><div class="label">开放时间</div>8:30-20:00</div>
+<div class="info-item"><div class="label">建议时长</div><strong>4-5小时</strong></div>
+<div class="info-item"><div class="label">徒步距离</div>约10km往返</div>
+<div class="info-item"><div class="label">海拔</div>2500-3500m</div>
+<div class="info-item"><div class="label">适合人群</div>🏃 爱徒步者 · 摄影师</div>
+<div class="info-item"><div class="label">不适合</div><strong>不想走路的人</strong>· 带老人小孩</div>
+<div class="info-item"><div class="label">最新变化</div>🔴 将军桥已拆除，改为天空之境路线</div>
+</div>
+</div>
+</div>
+
+<!-- GO -->
+<div class="tc" id="go">
+<div class="card"><div class="c-title">🚗 怎么去</div>
+<div class="route">
+<strong>从伊宁出发：</strong><br>
+方案A（伊昭公路开放）：伊宁→伊昭公路(S237,122km,3h)→昭苏→夏塔(25km,0.5h) = <strong>约3.5h</strong><br>
+方案B（绕道安全）：伊宁→特克斯(G578,120km,2.5h)→昭苏(65km,1.5h)→夏塔(25km,0.5h) = <strong>约4.5h</strong>
+</div>
+<div class="tip tip-y"><strong>⚠️ 伊昭公路：</strong>每年仅6月中-10月初开放，山路弯道多部分无护栏。不开就走方案B，路况很好。</div>
+</div>
+</div>
+
+<!-- PLAY -->
+<div class="tc" id="play">
+<div class="card"><div class="c-title">🎯 推荐路线</div>
+<div class="route">
+<strong>标准徒步路线：</strong><br>
+景区门口 → 🔁 <strong>区间车</strong>(45min) → 温泉酒店 → 🔁 <strong>电瓶车</strong>(15min) → 青蛙泉 → 🥾 <strong>徒步</strong> → 天空之境(新) → 将军桥遗址 → 卡拉房子观景台 → 木扎尔特冰川远景<br>
+<strong>往返约10km，4-5h</strong>
+</div>
+</div>
+<div class="card"><div class="c-title">🏞️ 各站点说明</div>
+<table style="width:100%;border-collapse:collapse;font-size:.9em">
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:4px 0"><strong>青蛙泉</strong></td><td>⭐ "整条夏塔人最少、景最绝的一段路"<br>"顺着河边木栈道走，雪山溪流云杉一路伴随" (1142❤️帖)</td></tr>
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:4px 0"><strong>天空之境</strong></td><td>🆕 新路线（替代将军桥）。镜子装置拍雪山倒影</td></tr>
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:4px 0"><strong>卡拉房子观景台</strong></td><td>⭐ "比官方天空之境好看太多！免费吊打付费" (1142❤️帖)</td></tr>
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:4px 0"><strong>鲜花台</strong></td><td>可酌情取舍，徒步较长</td></tr>
+</table>
+</div>
+<div class="card"><div class="c-title">⏰ 时间分配</div>
+<div class="info-grid">
+<div class="info-item">⏱️ 区间车：45min</div>
+<div class="info-item">⏱️ 电瓶车：15min</div>
+<div class="info-item">⏱️ 徒步：2-3h</div>
+<div class="info-item">⏱️ 拍照+休息：1h</div>
+</div>
+<div class="tip tip-g" style="margin-top:8px"><strong>建议：</strong>上午开始徒步（下午易变天下雨）。带干粮和水，景区内没餐厅。</div>
+</div>
+</div>
+
+<!-- PHOTO -->
+<div class="tc" id="photo">
+<div class="card"><div class="c-title">📷 最佳机位</div>
+<table style="width:100%;border-collapse:collapse;font-size:.9em">
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:4px 0"><strong>青蛙泉</strong></td><td>水坑倒拍雪山，长焦拍雪山拉近（887❤️帖推荐6个机位）</td></tr>
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:4px 0"><strong>1号房对面草坪</strong></td><td>走到最边上，长焦拍的雪山才大</td></tr>
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:4px 0"><strong>4号房后面</strong></td><td>围栏里石头拍背影+雪山</td></tr>
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:4px 0"><strong>3号停车场</strong></td><td>木栈道拍全幅</td></tr>
+</table>
+<div class="tip tip-y" style="margin-top:8px"><strong>提醒：</strong>"你一p我一p，到了现场都懵逼——调色图有点误导人"(2赞评论)。降低P图预期，原始风景已经很美。</div>
+</div>
+</div>
+
+<!-- AVOID -->
+<div class="tc" id="avoid">
+<div class="card"><div class="c-title">⚠️ 避坑清单</div>
+<div class="tip tip-r"><strong>🔴 "敞篷车坐到第一站青蛙泉可以喊司机停车，不然不给停"</strong>(11赞)——区间车中途不停站，要注意</div>
+<div class="tip tip-r"><strong>🔴 "徒步道外面也是一路风景"</strong>(16赞)——不要老盯着徒步道，电瓶车到天空之境这段也很美</div>
+<div class="tip tip-r"><strong>🔴 下午容易变天下雨</strong>——早点去（13:00前到），带冲锋衣</div>
+<div class="tip tip-y"><strong>🟡 "需要走进去才好看"</strong>(13赞)——核心就是：别懒！走到将军桥以上才有好风景</div>
+<div class="tip tip-y"><strong>🟡 景区设施不完善</strong>——做好心理准备，不要以5A标准期待</div>
+<div class="tip tip-y"><strong>🟡 手机可能没信号</strong>——提前下载离线地图</div>
+</div>
+</div>
+
+<div class="footer">📡 数据基于 xiaohongshu-mcp 2026年7月23日搜索 · <a href="伊犁景点深度分析.html">返回深度分析</a></div>
+</div>
+
+<script>
+function sw(t){document.querySelectorAll('.tc').forEach(e=>e.classList.remove('show'));document.getElementById(t).classList.add('show');document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));event.target.classList.add('active')}
+</script>
+</body></html>

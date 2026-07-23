@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊犁6天5晚 · 三方案完整攻略</title>
+<style>
+  :root {
+    --a: #2d6a4f; --b: #1e6091; --c: #7b2d8e;
+    --bg: #f8f9fa; --card: #fff; --text: #1b1b1b;
+    --text-light: #5a5a5a; --border: #e0e0e0;
+    --green: #2d6a4f; --yellow: #e9c46a; --red: #e63946; --blue: #457b9d;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 14.5px; }
+
+  .hero { background: linear-gradient(135deg, #1b4332, #2d6a4f 40%, #40916c); color: #fff; padding: 45px 20px 35px; text-align: center; }
+  .hero h1 { font-size: 2em; font-weight: 700; letter-spacing: 1px; }
+  .hero .sub { opacity: .85; margin-top: 6px; font-size: .95em; }
+  .hero .meta { margin-top: 14px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: .85em; }
+  .hero .meta span { background: rgba(255,255,255,.15); padding: 3px 14px; border-radius: 20px; }
+  .hero .src { margin-top: 10px; font-size: .78em; opacity: .65; }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 14px; }
+
+  /* Plan Tabs */
+  .plan-tabs { display: flex; gap: 6px; margin: 20px auto; max-width: 1000px; padding: 0 14px; }
+  .plan-tab { flex: 1; padding: 12px 8px; text-align: center; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: .92em; border: 2px solid var(--border); background: var(--card); transition: .25s; }
+  .plan-tab:hover { transform: translateY(-2px); }
+  .plan-tab .sub { font-size: .78em; font-weight: 400; opacity: .75; margin-top: 2px; }
+  .plan-tab.active-a { background: var(--a); color:#fff; border-color:var(--a); }
+  .plan-tab.active-b { background: var(--b); color:#fff; border-color:var(--b); }
+  .plan-tab.active-c { background: var(--c); color:#fff; border-color:var(--c); }
+
+  .plan-content { display: none; }
+  .plan-content.show { display: block; }
+
+  .section { margin-bottom: 24px; }
+  .s-title { font-size: 1.25em; font-weight: 700; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 3px solid; display: flex; align-items: center; gap: 8px; }
+
+  .card { background: var(--card); border-radius: 12px; padding: 18px; margin-bottom: 12px; border: 1px solid var(--border); }
+  .card-title { font-weight: 700; margin-bottom: 8px; font-size: 1em; }
+
+  /* PC grid */
+  .pc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 8px 0; }
+  @media (max-width:700px) { .pc-grid { grid-template-columns: 1fr; } }
+  .pc-card { border-radius: 10px; padding: 12px; border: 1px solid var(--border); }
+  .pc-card.pro { border-left: 4px solid var(--green); }
+  .pc-card.con { border-left: 4px solid var(--red); }
+  .pc-card.warn { border-left: 4px solid var(--yellow); }
+  .pc-card .pc-t { font-weight: 700; margin-bottom: 4px; }
+  .pc-card ul { list-style: none; padding: 0; }
+  .pc-card ul li { padding: 2px 0 2px 16px; position: relative; font-size: .9em; }
+  .pc-card ul li::before { position: absolute; left: 0; }
+
+  /* Day card */
+  .d-card { border-radius: 14px; margin-bottom: 14px; border: 1px solid var(--border); overflow: hidden; }
+  .d-head { padding: 12px 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; align-items: center; color:#fff; }
+  .d-head .dl { font-weight: 700; font-size: 1em; }
+  .d-head .dm { font-size: .82em; opacity: .9; display: flex; gap: 10px; }
+  .d-body { padding: 14px 16px; }
+  .d-body table { width:100%; border-collapse: collapse; font-size: .92em; }
+  .d-body td { padding: 4px 6px; vertical-align: top; }
+  .d-body td:first-child { width: 68px; color: var(--text-light); white-space: nowrap; font-weight: 500; }
+  .dh { margin: 8px 0; border: none; border-top: 1px dashed var(--border); }
+
+  .da .d-head { background: var(--a); }
+  .db .d-head { background: var(--b); }
+  .dc .d-head { background: var(--c); }
+
+  .alert { padding: 10px 14px; border-radius: 8px; margin: 8px 0; font-size: .88em; }
+  .alert-red { background:#f8d7da; border-left:4px solid var(--red); }
+  .alert-yellow { background:#fff3cd; border-left:4px solid var(--yellow); }
+  .alert-green { background:#d8f3dc; border-left:4px solid var(--green); }
+  .alert-blue { background:#cfe2ff; border-left:4px solid var(--blue); }
+
+  .tag { display:inline-block; padding:2px 10px; border-radius:10px; font-size:.82em; margin:2px; }
+  .tag-g { background:#d8f3dc; color:#1b4332; }
+  .tag-y { background:#fff3cd; color:#856404; }
+  .tag-r { background:#f8d7da; color:#721c24; }
+  .tag-b { background:#cfe2ff; color:#084298; }
+
+  table.info { width:100%; border-collapse:collapse; margin:6px 0; font-size:.9em; }
+  table.info th, table.info td { border:1px solid var(--border); padding:5px 8px; text-align:left; }
+  table.info th { font-weight:600; }
+  table.info tr:nth-child(even) { background:#fafafa; }
+
+  /* Road card */
+  .road { border-left:4px solid var(--a); padding:12px 14px; margin:8px 0; border-radius:0 8px 8px 0; }
+
+  .footer { text-align:center; padding:24px; color:var(--text-light); font-size:.82em; border-top:1px solid var(--border); margin-top:24px; }
+
+  .nav-strip { display:flex; gap:4px; flex-wrap:wrap; margin-bottom:12px; }
+  .nav-strip a { padding:6px 12px; font-size:.85em; color:var(--text-light); text-decoration:none; border-radius:6px; }
+  .nav-strip a:hover { background:var(--border); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🏔️ 伊犁 6 天 5 晚 · 三方案完整攻略</h1>
+  <div class="sub">基于小红书2026年7月300+条帖子+评论区数据</div>
+  <div class="meta">
+    <span>📅 6天5晚</span>
+    <span>📡 数据时间：2026年7月23日</span>
+    <span>🔍 覆盖5个主流平台</span>
+  </div>
+  <div class="src">数据来源：xiaohongshu-mcp · search_feeds + get_feed_detail（含评论区）</div>
+</div>
+
+<!-- Tabs -->
+<div class="plan-tabs">
+  <div class="plan-tab active-a" onclick="sw('a')">🏆 方案A · 经典舒适<div class="sub">赛湖+夏塔+喀拉峻+恰西</div></div>
+  <div class="plan-tab" onclick="sw('b')">🌿 方案B · 草原深度<div class="sub">+唐布拉百里画廊</div></div>
+  <div class="plan-tab" onclick="sw('c')">🏡 方案C · 琼库什台<div class="sub">拼车/包车版</div></div>
+</div>
+
+<div class="container">
+
+<!-- ==================== A ==================== -->
+<div class="plan-content show" id="pa">
+<div class="section" style="margin-bottom:12px;"><div class="s-title" style="border-color:var(--a);color:var(--a)">🏆 方案A · 经典舒适版</div></div>
+
+<div class="pc-grid">
+  <div class="pc-card pro"><div class="pc-t">✅ 优点</div><ul>
+    <li>✅ 赛湖+夏塔+喀拉峻+恰西四个都是近期正面评价为主</li>
+    <li>✅ 避开了那拉提（旺季体验不佳）和琼库什台（山路难开）</li>
+    <li>✅ 全程国道省道，路况友好，适合自驾</li>
+    <li>✅ 每天车程合理（最长4h），节奏舒服</li></ul></div>
+  <div class="pc-card con"><div class="pc-t">❌ 缺点</div><ul>
+    <li>❌ 舍弃了那拉提（旺季人多体验不佳）</li>
+    <li>❌ 没走独库公路/伊昭公路</li>
+    <li>❌ 每晚换住宿（换3-4次酒店）</li></ul></div>
+  <div class="pc-card warn"><div class="pc-t">⚠️ 核心避雷</div><ul>
+    <li>🔴 赛湖：必须晴天去，南门只出不进</li>
+    <li>🔴 夏塔：需徒步，将军桥已拆除</li>
+    <li>🟡 喀拉峻：门票要买对</li></ul></div>
+</div>
+
+<!-- Route Overview -->
+<div class="card"><div class="card-title">🗺️ 路线示意</div><pre style="background:#f5f5f5;padding:12px;border-radius:8px;font-size:.9em;line-height:1.6;">
+D1 🛬 伊宁（到达，0km）
+D2 🏞️ 伊宁→赛里木湖→伊宁（高速往返4h）
+D3 🏔️ 伊宁→[伊昭公路/备选绕特克斯]→夏塔→昭苏（3-5h）
+D4 🌿 昭苏→喀拉峻→特克斯（1.5h）
+D5 🐑 特克斯→恰西草原→住新源（4h）
+D6 🚗 新源→伊宁返程（3h）
+</pre></div>
+
+<!-- D1 -->
+<div class="d-card da">
+  <div class="d-head"><span class="dl">D1 · 抵达伊宁 🛬</span><span class="dm">🚗 0km · 0h · 🏨 伊宁四钻</span></div>
+  <div class="d-body">
+    <table><tr><td>下午</td><td>✈️ 飞抵伊宁机场 → 取车 → 酒店入住</td></tr>
+    <tr><td>16-18点</td><td>🚶‍♂️ <strong>喀赞其民俗村</strong>（免费）— 蓝色维吾尔族建筑群，拍照出片</td></tr>
+    <tr><td>18-20点</td><td>🚶‍♂️ <strong>六星街</strong> — 古兰丹姆冰淇淋🍦 + 夜市小吃</td></tr>
+    <tr><td>晚上</td><td>早点休息！适应新疆时差（比内地晚2h，约21:30才日落）</td></tr></table>
+    <hr class="dh">
+    <div><strong>🍜 推荐吃：</strong> 六星街夜市 - 手抓饭、烤羊肉串、烤包子、手工酸奶</div>
+    <div><strong>🏨 推荐住：</strong> 突玛丽斯/瑞阳/好维佳/浦东假日（约300-450元/晚）</div>
+    <div class="tag tag-g">🟢 不开车</div>
+    <div class="tag tag-b">🔵 免费景点</div>
+  </div>
+</div>
+
+<!-- D2 -->
+<div class="d-card da">
+  <div class="d-head"><span class="dl">D2 · 赛里木湖 🏞️</span><span class="dm">🚗 280km · 约4h · 🏨 伊宁（同一家）</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>09-10点</td><td>酒店早餐</td></tr>
+      <tr><td>10-12点</td><td>🚗 伊宁→赛里木湖 <strong>G30连霍高速</strong> 2h 🟢</td></tr>
+      <tr><td>12-17点</td><td>🚗 <strong>自驾环湖</strong>（东门进逆时针）：月亮湾→亲水滩→点将台→西海草原→S弯→灯塔<br><small>随时停车拍照，建议带干粮在湖边野餐</small></td></tr>
+      <tr><td>17-18点</td><td>📸 出景区顺路看 <strong>果子沟大桥</strong>（观景台拍照）</td></tr>
+      <tr><td>18-20点</td><td>🚗 回伊宁（高速2h）</td></tr>
+      <tr><td>晚上</td><td>🍜 伊宁市区：大盘鸡+皮带面</td></tr></table>
+    <hr class="dh">
+    <div class="road"><strong>🛣️ 驾驶卡：</strong>伊宁→赛湖(G30高速🟢140km/2h) → 赛湖环湖(景区路🟢90km/3-4h) → 赛湖→伊宁(G30高速🟢140km/2h)</div>
+    <div class="alert alert-yellow"><strong>⚠️ 2026年7月实况：</strong> 必须晴天去！阴天=灰色一片。<br>
+    "风超级大冷🥶"——带防风外套。"堵车严重"——早8点到避开旅游团。<br>
+    🔴 <strong>南门只出不进！</strong>别走错了绕路1小时。<br>
+    自驾票145元（24小时）。住宿巨贵且破，建议住伊宁或博乐。</div>
+    <div class="alert alert-green"><strong>💡 最佳拍照：</strong> 早8-10点/傍晚19-21点光线最好。正午顶光不好拍。</div>
+    <div class="tag tag-g">🟢 全程高速</div>
+  </div>
+</div>
+
+<!-- D3 -->
+<div class="d-card da">
+  <div class="d-head"><span class="dl">D3 · 夏塔 🏔️</span><span class="dm">🚗 220-250km · 3-5h · 🏨 昭苏</span></div>
+  <div class="d-body">
+    <p><strong>🚗 伊昭公路开放+天气好</strong> → 走主方案（3h，风景好）<br>
+    <strong>❌ 伊昭公路关闭/下雨/起雾</strong> → 走备选绕特克斯（5h，安全）</p>
+    <table>
+      <tr><td>08点</td><td>酒店早餐退房</td></tr>
+      <tr><td>08:30-? </td><td>🚗 伊宁→<strong>伊昭公路</strong>(S237,122km,3h) 或绕道特克斯(G578,250km,5h)</td></tr>
+      <tr><td>午后</td><td>🥾 <strong>夏塔徒步</strong>：温泉酒店→将军桥(已拆除)→新天空之境路线→木扎尔特冰川<br><small>往返约10km，需4-5h。带干粮和水！</small></td></tr>
+      <tr><td>傍晚</td><td>🚗 夏塔→昭苏县城（0.5h）</td></tr>
+      <tr><td>晚上</td><td>🍜 昭苏：马肉纳仁、烤串</td></tr></table>
+    <hr class="dh">
+    <div class="road"><strong>🛣️ 驾驶卡：</strong><br>
+    <strong>主方案</strong> 伊宁→昭苏(伊昭公路山路🟡122km/3h) → 昭苏→夏塔(县道🟢25km/0.5h)<br>
+    <strong>备选</strong> 伊宁→特克斯(G578国道🟢120km/2.5h) → 特克斯→昭苏(省道🟢65km/1.5h) → 昭苏→夏塔(🟢25km/0.5h)</div>
+    <div class="alert alert-yellow"><strong>⚠️ 夏塔2026年7月实况：</strong> 口碑严重分裂！<br>
+    "夏塔没意思建议不要浪费时间去"(1058❤️) vs "这六个机位一定要拍完再走"(887❤️)<br>
+    🔴 将军桥已拆除，改为"天空之境"路线。景区设施不完善。<br>
+    🟢 <strong>适合：</strong>爱徒步的人。<strong>不适合：</strong>不想走路的游客。<br>
+    💡 "需要走进去才好看"——别偷懒，多走几步风景完全不同。</div>
+    <div class="tag tag-y">🟡 伊昭公路可选</div>
+    <div class="tag tag-g">🟢 备选全国道</div>
+  </div>
+</div>
+
+<!-- D4 -->
+<div class="d-card da">
+  <div class="d-head"><span class="dl">D4 · 喀拉峻 🌿</span><span class="dm">🚗 100km · 约1.5h · 🏨 特克斯</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>09-09:30</td><td>昭苏酒店早餐</td></tr>
+      <tr><td>09:30-11点</td><td>🚗 昭苏→<strong>喀拉峻草原</strong>（省道+景区公路，1.5h）🟢</td></tr>
+      <tr><td>11-16点</td><td>🌿 <strong>喀拉峻草原</strong>（换乘景区区间车）<br>鲜花台→猎鹰台徒步→立体草原全景</td></tr>
+      <tr><td>16-16:30</td><td>🚗 喀拉峻→<strong>特克斯八卦城</strong>（20分钟）</td></tr>
+      <tr><td>晚上</td><td>逛八卦城、无人机航拍、吃红柳烤肉🍖</td></tr></table>
+    <hr class="dh">
+    <div class="alert alert-blue"><strong>💡 喀拉峻评价：</strong> "远超那拉提"、"被治愈了"——近期口碑很好。<br>
+    立体草原线条最美，视野开阔。门票140元（含区间车）。<br>
+    "人体草原"草场有轻微退化迹象，趁早去。</div>
+    <div class="tag tag-g">🟢 只需开1.5h</div>
+  </div>
+</div>
+
+<!-- D5 -->
+<div class="d-card da">
+  <div class="d-head"><span class="dl">D5 · 恰西草原 🐑</span><span class="dm">🚗 260km · 约4h · 🏨 新源/那拉提</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>08:30</td><td>特克斯酒店退房</td></tr>
+      <tr><td>09-12点</td><td>🚗 特克斯→<strong>恰西草原</strong>（G578国道，3h）🟢</td></tr>
+      <tr><td>12-16点</td><td>🚗 <strong>自驾穿越恰西</strong>：恰西画卷观景台→森林溪流→草原<br><small>30元/车，性价比极高。人少安静。</small></td></tr>
+      <tr><td>16-18点</td><td>🚗 恰西→新源县/那拉提镇（2h）</td></tr>
+      <tr><td>晚上</td><td>住宿休整</td></tr></table>
+    <hr class="dh">
+    <div class="alert alert-green"><strong>💡 恰西评价：</strong> "性价比最高的草原"、"美爆了"——自驾穿越森林，人少景美。<br>
+    近期口碑很好，评论区多人真实推荐。30元/车就能开进去，比那拉提140元香太多。</div>
+    <div class="tag tag-g">🟢 国道好开</div>
+  </div>
+</div>
+
+<!-- D6 -->
+<div class="d-card da">
+  <div class="d-head"><span class="dl">D6 · 返程 🚗</span><span class="dm">🚗 260km · 约3h · ✈️ 回家</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>09-10点</td><td>自然醒，早餐</td></tr>
+      <tr><td>10-13点</td><td>🚗 新源→伊宁（国道3h）🟢</td></tr>
+      <tr><td>13-14:30</td><td>伊宁市区午饭、买干果特产</td></tr>
+      <tr><td>14:30-</td><td>机场还车 → ✈️ 飞回家</td></tr></table>
+    <div class="alert alert-yellow">⚠️ 提前3小时到机场，新疆安检严格。还车前洗车。</div>
+    <div class="tag tag-g">🟢 国道好开</div>
+  </div>
+</div>
+
+<!-- Budget A -->
+<div class="section"><div class="s-title" style="border-color:var(--a);color:var(--a)">💰 费用估算 · 方案A</div>
+<div class="card">
+  <table class="info">
+    <tr><th>项目</th><th>明细</th><th>2人/人均</th><th>4人/人均</th></tr>
+    <tr><td>🚗 租车+油费</td><td>SUV 约400元/天×6天+油费900km</td><td>~1600元</td><td>~800元</td></tr>
+    <tr><td>🏨 住宿</td><td>5晚（伊宁2+昭苏1+特克斯1+新源1）</td><td>~1200元</td><td>~1200元</td></tr>
+    <tr><td>🎫 门票</td><td>赛湖145+夏塔100+喀拉峻140+恰西30</td><td>~415元</td><td>~415元</td></tr>
+    <tr><td>🍜 餐饮</td><td>6天早餐含，正餐自理</td><td>~600元</td><td>~600元</td></tr>
+    <tr style="background:#d8f3dc;font-weight:700;"><td>合计/人</td><td></td><td>~3815元</td><td>~3015元</td></tr>
+  </table>
+  <div style="margin-top:6px;font-size:.88em;">拼车（带司机）替代自驾：+500-1000元/人，不用自己开车</div>
+</div></div>
+</div>
+
+<!-- ==================== B ==================== -->
+<div class="plan-content" id="pb">
+<div class="section" style="margin-bottom:12px;"><div class="s-title" style="border-color:var(--b);color:var(--b)">🌿 方案B · 草原深度版（含唐布拉百里画廊）</div></div>
+
+<div class="pc-grid">
+  <div class="pc-card pro"><div class="pc-t">✅ 优点</div><ul>
+    <li>✅ 比A多了<strong>唐布拉百里画廊</strong>（免费，口碑好）</li>
+    <li>✅ 如果独库开放，D5-D6风景是全程高光</li>
+    <li>✅ 评论区多人推荐唐布拉替代那拉提</li></ul></div>
+  <div class="pc-card con"><div class="pc-t">❌ 缺点</div><ul>
+    <li>❌ D5车程较长（5-6h），较赶</li>
+    <li>❌ 独库公路开放不确定</li>
+    <li>❌ 每天换酒店（4-5次）</li></ul></div>
+  <div class="pc-card warn"><div class="pc-t">⚠️ 核心避雷</div><ul>
+    <li>🔴 独库公路出发前查开放状态</li>
+    <li>🔴 唐布拉遇雨天风景打折</li>
+    <li>🟡 D5恰西+唐布拉同一天较紧凑</li></ul></div>
+</div>
+
+<div class="card"><div class="card-title">🗺️ 路线示意</div><pre style="background:#f5f5f5;padding:12px;border-radius:8px;font-size:.9em;line-height:1.6;">
+D1 🛬 伊宁（同方案A）
+D2 🏞️ 伊宁→赛里木湖→伊宁（同方案A）
+D3 🏔️ 伊宁→夏塔→昭苏（同方案A）
+D4 🌿 昭苏→喀拉峻→特克斯（同方案A）
+D5 🐑 特克斯→恰西→🚗独库公路北段→唐布拉百里画廊→住乔尔玛
+D6 🚗 乔尔玛→独库公路→伊宁返程（若开放）
+</pre></div>
+
+<!-- D1-D4 same as A -->
+<div class="card"><div class="card-title">📅 D1-D4</div>D1-D4 与方案A完全相同：<strong>伊宁→赛湖→夏塔→喀拉峻→特克斯</strong>，参考方案A的详细行程。</div>
+
+<!-- D5 -->
+<div class="d-card db">
+  <div class="d-head"><span class="dl">D5 · 恰西+唐布拉 🐑🆕</span><span class="dm">🚗 ~350km · 5-6h · 🏨 乔尔玛</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>08:00</td><td>特克斯退房</td></tr>
+      <tr><td>08-11点</td><td>🚗 特克斯→<strong>恰西草原</strong>（国道3h）🟢</td></tr>
+      <tr><td>11-14点</td><td>🌿 <strong>恰西自驾穿越</strong>（恰西画卷+森林溪流，2-3h）</td></tr>
+      <tr><td>14-17点</td><td>🚗 恰西→那拉提方向→<strong>独库公路北段</strong>→<strong>唐布拉百里画廊</strong>（3-4h）<br><small>沿途经过那拉提（不停），转独库公路到乔尔玛</small></td></tr>
+      <tr><td>17-19点</td><td>🆓 <strong>唐布拉百里画廊</strong>自驾（S315省道免费，随走随停）<br><small>可选：仙女湖骑马徒步（2h往返）</small></td></tr>
+      <tr><td>晚上</td><td>🏨 住乔尔玛或唐布拉镇</td></tr></table>
+    <hr class="dh">
+    <div class="alert alert-green"><strong>🆕 唐布拉百里画廊：</strong> 免费公路景观带，评论区多人推荐替代那拉提。<br>
+    "投唐布拉一票"——雪山+森林+草原+喀什河谷，一步一景。<br>
+    从那拉提方向走独库公路到乔尔玛，向西拐入S315就是百里画廊。</div>
+    <div class="alert alert-yellow"><strong>⚠️ 注意：</strong> D5车程较长（5-6h），分3段走每段1-2h。<br>
+    <strong>独库公路必须开放</strong>才能走完整路线。出发前查"伊犁交警"公众号。</div>
+    <div class="tag tag-g">🟢 省道免费</div>
+    <div class="tag tag-y">🟡 车程较长</div>
+  </div>
+</div>
+
+<!-- D6 -->
+<div class="d-card db">
+  <div class="d-head"><span class="dl">D6 · 返程 🚗</span><span class="dm">🚗 ~300km · 约4h · ✈️ 回家</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>09点</td><td>自然醒</td></tr>
+      <tr><td>10-14点</td><td>🚗 经独库公路北段→伊宁（若开放）或绕道→伊宁</td></tr>
+      <tr><td>14:30-</td><td>机场还车→✈️ 回家</td></tr></table>
+    <div class="tag tag-g">🟢 国道</div>
+  </div>
+</div>
+
+<div class="section"><div class="s-title" style="border-color:var(--b);color:var(--b)">💰 费用估算 · 方案B</div>
+<div class="card">
+  <table class="info">
+    <tr><th>项目</th><th>2人/人均</th><th>4人/人均</th></tr>
+    <tr><td>🚗 租车+油费</td><td>里程更长（+独库公路段）</td><td>~1800元</td><td>~900元</td></tr>
+    <tr><td>🏨 住宿</td><td>5晚</td><td>~1200元</td><td>~1200元</td></tr>
+    <tr><td>🎫 门票</td><td>赛湖145+夏塔100+喀拉峻140+恰西30（唐布拉免费）</td><td>~415元</td><td>~415元</td></tr>
+    <tr><td>🍜 餐饮</td><td>6天</td><td>~600元</td><td>~600元</td></tr>
+    <tr style="background:#d8f3dc;font-weight:700;"><td>合计/人</td><td></td><td>~4015元</td><td>~3115元</td></tr>
+  </table>
+</div></div>
+</div>
+
+<!-- ==================== C ==================== -->
+<div class="plan-content" id="pc">
+<div class="section" style="margin-bottom:12px;"><div class="s-title" style="border-color:var(--c);color:var(--c)">🏡 方案C · 琼库什台版（拼车/包车）</div></div>
+
+<div class="pc-grid">
+  <div class="pc-card pro"><div class="pc-t">✅ 优点</div><ul>
+    <li>✅ 琼库什台风景独特（村落+森林+草原）</li>
+    <li>✅ "伊犁只去一个草原选琼库什台"(285❤️)</li>
+    <li>✅ 拼车不用自己开山路</li></ul></div>
+  <div class="pc-card con"><div class="pc-t">❌ 缺点</div><ul>
+    <li>🔴 琼库什台盘山路弯多，<strong>不能自驾</strong></li>
+    <li>❌ 住宿贵且水平参差</li>
+    <li>❌ 舍弃了夏塔</li></ul></div>
+  <div class="pc-card warn"><div class="pc-t">⚠️ 核心避雷</div><ul>
+    <li>🔴 <strong>必须包车/拼车</strong>，不自驾去琼库什台</li>
+    <li>🔴 琼库什台后山和村口差距大</li>
+    <li>🟡 住宿选后山，前山一般</li></ul></div>
+</div>
+
+<div class="card"><div class="card-title">🗺️ 路线示意</div><pre style="background:#f5f5f5;padding:12px;border-radius:8px;font-size:.9em;line-height:1.6;">
+D1 🛬 伊宁（同方案A）
+D2 🏞️ 伊宁→赛里木湖→伊宁（拼车）
+D3 🏡 伊宁→琼库什台（拼车过盘山路，住一晚）
+D4 🌿 琼库什台→特克斯→喀拉峻→特克斯（拼车）
+D5 🐑 特克斯→恰西草原→新源（拼车）
+D6 🚗 返程
+</pre></div>
+
+<div class="d-card dc">
+  <div class="d-head"><span class="dl">D1-D2</span><span class="dm">同方案A</span></div>
+  <div class="d-body">D1 伊宁到达休整。D2 赛里木湖环湖（拼车，司机开车）。参考方案A详细行程。</div>
+</div>
+
+<div class="d-card dc">
+  <div class="d-head"><span class="dl">D3 · 琼库什台 🏡</span><span class="dm">🚗 拼车 · 🏨 琼库什台民宿</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>09点</td><td>伊宁退房，拼车出发</td></tr>
+      <tr><td>09-13点</td><td>🚗 伊宁→特克斯→<strong>琼库什台</strong>（拼车，盘山路司机开）<br><small>⚠️ 这条路弯多坡陡，不自驾！</small></td></tr>
+      <tr><td>下午</td><td>🏡 入住后山民宿→村落漫步→草原+森林+雪山拍照</td></tr>
+      <tr><td>晚上</td><td>🏔️ 看星空银河✨</td></tr></table>
+    <hr class="dh">
+    <div class="alert alert-red"><strong>🔴 琼库什台2026年7月实况：</strong><br>
+    "琼库什台很好但真不是谁都适合来"(657❤️)、"非必要不建议去"(213❤️ 388💬)<br>
+    "伊犁只去一个草原选琼库什台"(285❤️) vs "被暗算了"(195❤️)——口碑也分裂！<br>
+    <strong>山路多弯+住宿贵+服务参差</strong>，做好心理准备。<br>
+    💡 <strong>必须住一晚才值</strong>，不住=白去。住宿选后山，前山一般。</div>
+    <div class="tag tag-r">🔴 不自驾</div>
+    <div class="tag tag-b">🔵 住一晚才值</div>
+  </div>
+</div>
+
+<div class="d-card dc">
+  <div class="d-head"><span class="dl">D4 · 喀拉峻 🌿</span><span class="dm">🚗 拼车3h · 🏨 特克斯</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>上午</td><td>🚗 琼库什台→特克斯（拼车2h）</td></tr>
+      <tr><td>下午</td><td>🌿 <strong>喀拉峻草原</strong>（区间车上山，鲜花台→猎鹰台）</td></tr>
+      <tr><td>晚上</td><td>特克斯八卦城、红柳烤肉</td></tr></table>
+    <div class="tag tag-g">🟢 拼车</div>
+  </div>
+</div>
+
+<div class="d-card dc">
+  <div class="d-head"><span class="dl">D5 · 恰西 🐑</span><span class="dm">🚗 拼车4h · 🏨 新源</span></div>
+  <div class="d-body">
+    <table>
+      <tr><td>09-12点</td><td>🚗 特克斯→恰西（3h）</td></tr>
+      <tr><td>12-16点</td><td>🌿 <strong>恰西自驾穿越</strong></td></tr>
+      <tr><td>16-18点</td><td>🚗 恰西→新源</td></tr></table>
+    <div class="tag tag-g">🟢 拼车</div>
+  </div>
+</div>
+
+<div class="d-card dc">
+  <div class="d-head"><span class="dl">D6 · 返程 🚗</span><span class="dm">🚗 3h · ✈️ 回家</span></div>
+  <div class="d-body">
+    <table><tr><td>09-12点</td><td>🚗 新源→伊宁（3h）</td></tr>
+    <tr><td>午后</td><td>机场→✈️ 回家</td></tr></table>
+  </div>
+</div>
+
+<div class="section"><div class="s-title" style="border-color:var(--c);color:var(--c)">💰 费用估算 · 方案C（拼车）</div>
+<div class="card">
+  <table class="info">
+    <tr><th>项目</th><th>2人/人均</th><th>4人/人均</th></tr>
+    <tr><td>🚐 拼车6天</td><td>~2400元</td><td>~1800元</td></tr>
+    <tr><td>🏨 住宿</td><td>5晚（琼库什台1晚较贵）</td><td>~1400元</td><td>~1400元</td></tr>
+    <tr><td>🎫 门票</td><td>赛湖145+喀拉峻140+恰西30</td><td>~315元</td><td>~315元</td></tr>
+    <tr><td>🍜 餐饮</td><td>6天</td><td>~600元</td><td>~600元</td></tr>
+    <tr style="background:#d8f3dc;font-weight:700;"><td>合计/人</td><td></td><td>~4715元</td><td>~4115元</td></tr>
+  </table>
+</div></div>
+</div>
+
+<!-- ==================== COMMON ==================== -->
+<div class="section">
+  <div class="s-title" style="border-color:var(--text-light);color:var(--text-light)">📌 通用攻略</div>
+
+  <!-- Selection Guide -->
+  <div class="card"><div class="card-title">⚖️ 三方案怎么选</div>
+  <div style="margin-bottom:10px;font-size:.9em;">🔍 <a href="伊犁景点深度分析.html" style="color:var(--a);font-weight:600;text-decoration:underline;" target="_blank">查看每个景点的详细正反面分析 →</a>（基于300+条帖子+评论区的深度数据）</div>
+  <table class="info">
+    <tr><th> </th><th>🏆 方案A·经典舒适</th><th>🌿 方案B·草原深度</th><th>🏡 方案C·琼库什台</th></tr>
+    <tr><td>适合谁</td><td>第一次来·自驾·怕人多</td><td>想多看草原·独库开放</td><td>包车·爱村落·不怕山路</td></tr>
+    <tr><td>核心景点</td><td>赛湖+夏塔+喀拉峻+恰西</td><td>+唐布拉百里画廊</td><td>+琼库什台-夏塔</td></tr>
+    <tr><td>自驾难度</td><td>🟢 全程友好</td><td>🟡 D5较长</td><td>🔴 山路需拼车</td></tr>
+    <tr><td>预算/人</td><td>~3000-3800元</td><td>~3100-4000元</td><td>~4100-4700元</td></tr>
+    <tr><td>推荐指数</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐（有条件）</td></tr>
+  </table>
+  </div>
+
+  <!-- Hotel -->
+  <div class="card"><div class="card-title">🏨 住宿推荐</div>
+  <table class="info">
+    <tr><th>位置</th><th>推荐</th><th>价格</th><th>备注</th></tr>
+    <tr><td>伊宁（住2晚）</td><td>突玛丽斯/好维佳/浦东假日/六星街民宿</td><td>300-450元</td><td>选六星街附近，晚上逛吃方便</td></tr>
+    <tr><td>昭苏（住1晚）</td><td>昭苏宾馆/天马大酒店</td><td>200-350元</td><td>⚠️ 条件比伊宁差一档</td></tr>
+    <tr><td>特克斯（住1晚）</td><td>全季/朗客轻奢/长寿客</td><td>200-400元</td><td>住八卦城中心附近</td></tr>
+    <tr><td>那拉提/新源（住1晚）</td><td>星河谷营地/云杉鹿舍/半山渡</td><td>250-500元</td><td>⚠️ 旺季提前7-14天订</td></tr>
+    <tr><td>琼库什台（方案C）</td><td>后山民宿（前山一般）</td><td>350-600元</td><td>⚠️ 山路难走，住宿贵且参差</td></tr>
+    <tr><td>乔尔玛（方案B）</td><td>乔尔玛服务区/唐布拉镇</td><td>200-400元</td><td>条件有限</td></tr>
+  </table>
+  </div>
+
+  <!-- Spot Quick Ref -->
+  <div class="card"><div class="card-title">🏆 景点速览（正反面对比·基于最新搜索数据）</div>
+  <div style="font-size:.82em;color:var(--tl);margin-bottom:6px;">点击景点名查看详细攻略页 · <a href="伊犁景点深度分析.html" target="_blank">深度分析 →</a></div>
+  <table class="info">
+    <tr><th>景点</th><th>自研评分</th><th>正面互动</th><th>负面互动</th><th>👍 喜欢什么</th><th>👎 吐槽什么</th><th>自研结论</th></tr>
+    <tr><td>🏞️ <a href="attractions/sailimu.html" target="_blank">赛里木湖</a></td><td><strong>9/10</strong></td><td>最高6824❤️</td><td>最高245❤️</td><td>晴天湖水蓝到震撼·日落美爆·"没白活"</td><td>极看天气·阴天灰色·堵车·住宿贵破</td><td><strong>伊犁最值得去的景点</strong>，正面数据碾压负面。关键是选晴天</td></tr>
+    <tr><td>🌲 <a href="attractions/qiaxi.html" target="_blank">恰西</a></td><td><strong>8.5/10</strong></td><td>30元/车性价比</td><td>62❤️"避雷"</td><td>性价比之王·自驾爽·人少景美</td><td>规模小·设施简单</td><td>伊犁<strong>性价比最高的草原</strong>，适合自驾深度体验</td></tr>
+    <tr><td>🆓 <a href="attractions/tangbula.html" target="_blank">唐布拉</a></td><td><strong>8.5/10</strong></td><td>评论区一致推荐</td><td>需独库开放</td><td>免费·人少·风景不输那拉提</td><td>需独库公路开放</td><td>那拉提的<strong>最佳免费替代</strong></td></tr>
+    <tr><td>🌿 <a href="attractions/kalajun.html" target="_blank">喀拉峻</a></td><td><strong>7.5/10</strong></td><td>319❤️"远超那拉提"</td><td>384❤️"最难受"</td><td>立体草原独特·猎鹰台绝·人少</td><td>景区管理差·门票混乱·草场退化</td><td>草原中推荐度高于那拉提。立体草原独特，但管理是硬伤</td></tr>
+    <tr><td>🏔️ <a href="attractions/xiata.html" target="_blank">夏塔</a></td><td><strong>7/10</strong></td><td>1144❤️攻略</td><td>1058❤️"没意思"</td><td>雪山近在咫尺·摄影机位多</td><td>设施不完善·需徒步·自驾不方便</td><td><strong>最分裂景点</strong>。爱徒步的人狂推，懒人狂喷。自己选阵营</td></tr>
+    <tr><td>🐑 <a href="attractions/nalati.html" target="_blank">那拉提</a></td><td><strong>7/10</strong></td><td>1499❤️自驾攻略</td><td>526❤️"避大雷"</td><td>空中草原壮美·自驾票48h</td><td>旺季人多体验差·住宿贵·票难抢</td><td><strong>风景好但旺季体验崩</strong>。自驾去=好，旺季挤区间车=受罪</td></tr>
+    <tr><td>🏡 <a href="attractions/qiongku.html" target="_blank">琼库什台</a></td><td><strong>6.5/10</strong></td><td>846❤️攻略</td><td>419❤️"后山不好上"</td><td>村落森林草原组合·"省了去瑞士"</td><td>山路难开·住宿贵·服务差</td><td><strong>条件性推荐</strong>：包车+住后山+住一晚=值。自驾一日游=劝退</td></tr>
+  </table>
+  </div>
+
+  <!-- Food -->
+  <div class="card"><div class="card-title">🍜 美食地图</div>
+  <table class="info">
+    <tr><th>地点</th><th>必吃</th><th>预算/顿</th></tr>
+    <tr><td>伊宁</td><td>古兰丹姆冰淇淋、手抓饭、烤羊肉串、大盘鸡+皮带面、烤包子、手工酸奶</td><td>~80元</td></tr>
+    <tr><td>昭苏</td><td>马肉纳仁、烤全羊/烤串、包尔萨克+奶茶</td><td>~60元</td></tr>
+    <tr><td>特克斯</td><td>红柳烤肉、手工酸奶（八卦城中心广场夜市）</td><td>~60元</td></tr>
+    <tr><td>那拉提/新源</td><td>那拉提烤肉、拌面（过油肉）、草原土火锅</td><td>~70元</td></tr>
+    <tr><td>琼库什台</td><td>民宿提供餐食，选择较少</td><td>~80元</td></tr>
+  </table>
+  </div>
+
+  <!-- 自驾攻略 -->
+  <div class="card"><div class="card-title">🚗 自驾全攻略</div>
+  <table class="info">
+    <tr><th>项目</th><th>说明</th></tr>
+    <tr><td>租车</td><td>携程/神州/一嗨，建议SUV。买全险。伊宁机场取还。</td></tr>
+    <tr><td>交规</td><td>全程系安全带。限速40-80。区间测速多。加油需刷身份证。</td></tr>
+    <tr><td>加油</td><td>见到加油站就加满。伊宁/特克斯/昭苏/那拉提镇都有加油站。景区内无加油站。</td></tr>
+    <tr><td>APP</td><td>高德地图（提前下离线地图）、游新疆小程序（预约门票）</td></tr>
+    <tr><td>安检</td><td>随身带身份证！新疆安检频繁，住宿/加油/过检查站都要用。</td></tr>
+  </table>
+  </div>
+
+  <!-- Checklist -->
+  <div class="card"><div class="card-title">🧳 出行清单</div>
+  <ul style="padding-left:18px;line-height:2;columns:2;">
+    <li>☐ 身份证（安检/加油/住宿必备）</li>
+    <li>☐ 驾驶证原件</li>
+    <li>☐ SPF50+防晒霜+帽子+墨镜</li>
+    <li>☐ 防风外套/薄羽绒</li>
+    <li>☐ 徒步鞋（夏塔/喀拉峻用）</li>
+    <li>☐ 晕车药（山路用）</li>
+    <li>☐ 保湿护肤品（新疆极干）</li>
+    <li>☐ 充电宝+车载充电器</li>
+    <li>☐ 零食+水</li>
+    <li>☐ 少量现金</li>
+  </ul>
+  </div>
+
+  <!-- Daily notes -->
+  <div class="card"><div class="card-title">⚠️ 每日注意事项</div>
+  <table class="info">
+    <tr><th>天</th><th>注意</th></tr>
+    <tr><td>D1</td><td>刚到新疆别太兴奋，先适应时差，多喝水防干燥</td></tr>
+    <tr><td>D2</td><td>赛湖风大带外套；防晒；湖边开车注意横风；南门只出不进</td></tr>
+    <tr><td>D3</td><td>伊昭公路如走的话控制车速弯道不超车；夏塔下午易变天早点去</td></tr>
+    <tr><td>D4</td><td>喀拉峻最后一段盘山路慢开；景区内徒步注意防晒</td></tr>
+    <tr><td>D5</td><td>恰西可以开进去；方案B车程较长注意休息</td></tr>
+    <tr><td>D6</td><td>预留3小时到伊宁机场；还车前洗干净车</td></tr>
+  </table>
+  </div>
+
+  <!-- Time -->
+  <div class="card"><div class="card-title">⏰ 新疆时间参考</div>早餐~9点 · 午餐14-16点 · 晚餐20点 · 日落~21:30 · 景区9:00-20:00开放</div>
+</div>
+
+</div>
+
+<div class="footer">📡 数据基于 xiaohongshu-mcp 2026年7月23日搜索 · 建议出发前再次确认实时信息</div>
+
+<script>
+function sw(p) {
+  document.querySelectorAll('.plan-content').forEach(el => el.classList.remove('show'));
+  document.getElementById('p'+p).classList.add('show');
+  document.querySelectorAll('.plan-tab').forEach(el => { el.className = 'plan-tab'; });
+  document.querySelectorAll('.plan-tab')[p==='a'?0:p==='b'?1:2].classList.add('active-'+p);
+}
+</script>
+</body>
+</html>

@@ -222,11 +222,12 @@
   .tag-blue { background: #cfe2ff; color: #084298; }
 
   /* Tables */
-  .info-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.93em; }
+  .info-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.93em; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .info-table th, .info-table td {
     border: 1px solid var(--border);
     padding: 8px 12px;
     text-align: left;
+    white-space: nowrap;
   }
   .info-table th {
     background: #f0f4f0;
@@ -267,6 +268,18 @@
   .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
   @media (max-width: 700px) {
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .info-table, .day-body table, .cmp-table { font-size: 0.8em; }
+    .info-table th, .info-table td,
+    .day-body table td, .day-body table th,
+    .cmp-table th, .cmp-table td { padding: 4px 5px; word-break: break-word; }
+    .day-body table td:first-child { width: auto; white-space: normal; }
+    .hero h1 { font-size: 1.6em; }
+    .hero { padding: 30px 14px; }
+    .hero .meta { gap: 6px; }
+    .hero .meta span { font-size: 0.78em; padding: 2px 8px; }
+    .day-body { padding: 12px; }
+    .card { padding: 14px; }
+    .nav a { font-size: 0.78em; padding: 10px 10px; }
   }
 
   /* Checklist */

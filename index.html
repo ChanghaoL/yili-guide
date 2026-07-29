@@ -80,9 +80,19 @@
   .tag-r { background:#f8d7da; color:#721c24; }
   .tag-b { background:#cfe2ff; color:#084298; }
 
-  table.info { width:100%; border-collapse:collapse; margin:6px 0; font-size:.9em; }
-  table.info th, table.info td { border:1px solid var(--border); padding:5px 8px; text-align:left; }
+  table.info { width:100%; border-collapse:collapse; margin:6px 0; font-size:.9em; display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table.info th, table.info td { border:1px solid var(--border); padding:5px 8px; text-align:left; white-space:nowrap; }
   table.info th { font-weight:600; }
+
+  @media (max-width:700px) {
+    .hero h1 { font-size:1.4em; }
+    .hero { padding:25px 10px; }
+    .d-body { padding:10px; }
+    .d-body table td:first-child { width:auto; white-space:normal; }
+    .d-head .dm { font-size:.72em; gap:4px; flex-wrap:wrap; }
+    table.info { font-size:.78em; }
+    table.info th, table.info td { padding:3px 5px; }
+  }
   table.info tr:nth-child(even) { background:#fafafa; }
 
   /* Road card */
